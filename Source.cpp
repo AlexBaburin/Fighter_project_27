@@ -26,12 +26,12 @@ void graphics(int game_state, char* enemy_health, char* player_health, int enemy
 		cout << "//                                                                  ||                  //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
-		cout << "//                           ÂÂÅÄÈÒÅ ×ÈÑËÎ È ÍÀÆÌÈÒÅ ENTER                              //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
-		cout << "//              1 - ÍÀ×ÀÒÜ ÈÃĞÓ                        2 - ÂÛÕÎÄ                        //\n";
+		cout << "//                                                                                      //\n";
+		cout << "//              1 - START GAME                        2 - QUIT                          //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
@@ -47,7 +47,7 @@ void graphics(int game_state, char* enemy_health, char* player_health, int enemy
 		system("cls");
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
 		cout << "//                                                                                      //\n";
-		cout << "//       ÇÄÎĞÎÂÜÅ ÂĞÀÃÀ: " << setw(2) << enemy_hp <<"                        ÇÄÎĞÎÂÜÅ ÈÃĞÎÊÀ: " << setw(2) << player_hp << "                  //\n";
+		cout << "//       ENEMY HEALTH: " << setw(2) << enemy_hp <<"                          PLAYER HEALTH: " << setw(2) << player_hp << "                    //\n";
 		cout << "//     ----------------------------------        ----------------------------------     //\n";
 		cout << "//     --"<< enemy_health <<          "--        --" << player_health <<        "--     //\n";
 		cout << "//     ----------------------------------        ----------------------------------     //\n";
@@ -55,7 +55,7 @@ void graphics(int game_state, char* enemy_health, char* player_health, int enemy
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
-		cout << "//                                    ÈÃĞÀ ÍÀ×ÀËÀÑÜ!                                    //\n";
+		cout << "//                                    GAME START!                                       //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
@@ -64,10 +64,10 @@ void graphics(int game_state, char* enemy_health, char* player_health, int enemy
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
-		cout << "//                                         ÀÒÀÊÈ                                        //\n";
-		cout << "//     1 - ÀÒÀÊÀ ÍÎÃÎÉ                                       3 - ÀÒÀÊÀ ÏĞÀÂÎÉ ĞÓÊÎÉ     //\n";
+		cout << "//                                         ATTACK                                       //\n";
+		cout << "//     1 - KICK                                       3 - RIGHT PUNCH                   //\n";
 		cout << "//                                                                                      //\n";
-		cout << "//     2 - ÀÒÀÊÀ ËÅÂÎÉ ĞÓÊÎÉ                                 4 - ÁËÎÊ                   //\n";
+		cout << "//     2 - LEFT PUNCH                                 4 - BLOCK                         //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
 	}
@@ -77,27 +77,27 @@ void graphics(int game_state, char* enemy_health, char* player_health, int enemy
 		system("cls");
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
 		cout << "//                                                                                      //\n";
-		cout << "//       ÇÄÎĞÎÂÜÅ ÂĞÀÃÀ: " << setw(2) << enemy_hp << "                        ÇÄÎĞÎÂÜÅ ÈÃĞÎÊÀ: " << setw(2) << player_hp << "                  //\n";
+		cout << "//       ENEMY HEALTH: " << setw(2) << enemy_hp << "                          PLAYER HEALTH: " << setw(2) << player_hp << "                    //\n";
 		cout << "//     ----------------------------------        ----------------------------------     //\n";
 		cout << "//     --" << enemy_health <<         "--        --" << player_health <<        "--     //\n";
 		cout << "//     ----------------------------------        ----------------------------------     //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
 		cout << "//                                          //                                          //\n";
-		cout << "//     Âğàã èñïîëüçîâàë: " << setw(18) << used_attack(enemy_attack) << " //   Âû èñïîëüçîâàëè : " << setw(18) << used_attack(player_attack) << "   //\n";
+		cout << "//     ENEMY USED: " << setw(18) << used_attack(enemy_attack) << "       //   YOU USED: " << setw(18) << used_attack(player_attack) << "           //\n";
 		cout << "//                                          //                                          //\n";
 		cout << "//     " << setw(17) << crit_miss_message(enemy_dmg, player_attack, enemy_attack) << "                    //   " << setw(17) << crit_miss_message(player_dmg, enemy_attack, player_attack) << "                      //\n";
 		cout << "//                                          //                                          //\n";
-		cout << "//     Âğàã íàíåñ " << enemy_dmg[0] << " óğîíà                   //   Âû íàíåñëè " << player_dmg[0] << " óğîíà                     //\n";
+		cout << "//     Enemy deals " << enemy_dmg[0] << " damage                 //   You deal " << player_dmg[0] << " damage                      //\n";
 		cout << "//                                          //                                          //\n";
 		cout << "//                                          //                                          //\n";
 		cout << "//                                          //                                          //\n";
 		cout << "//                                          //                                          //\n";
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
-		cout << "//                                         ÀÒÀÊÈ                                        //\n";
-		cout << "//     1 - ÀÒÀÊÀ ÍÎÃÎÉ                                       3 - ÀÒÀÊÀ ÏĞÀÂÎÉ ĞÓÊÎÉ     //\n";
+		cout << "//                                         ATTACK                                       //\n";
+		cout << "//     1 - KICK                                       3 - RIGHT PUNCH                   //\n";
 		cout << "//                                                                                      //\n";
-		cout << "//     2 - ÀÒÀÊÀ ËÅÂÎÉ ĞÓÊÎÉ                                 4 - ÁËÎÊ                   //\n";
+		cout << "//     2 - LEFT PUNCH                                 4 - BLOCK                         //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
 	}
@@ -107,7 +107,7 @@ void graphics(int game_state, char* enemy_health, char* player_health, int enemy
 		system("cls");
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
 		cout << "//                                                                                      //\n";
-		cout << "//       ÇÄÎĞÎÂÜÅ ÂĞÀÃÀ: " << setw(2) << enemy_hp << "                        ÇÄÎĞÎÂÜÅ ÈÃĞÎÊÀ: " << setw(2) << player_hp << "                  //\n";
+		cout << "//       ENEMY HEALTH: " << setw(2) << enemy_hp << "                          PLAYER HEALTH: " << setw(2) << player_hp << "                    //\n";
 		cout << "//     ----------------------------------        ----------------------------------     //\n";
 		cout << "//     --" << enemy_health <<         "--        --" << player_health <<        "--     //\n";
 		cout << "//     ----------------------------------        ----------------------------------     //\n";
@@ -115,7 +115,7 @@ void graphics(int game_state, char* enemy_health, char* player_health, int enemy
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
-		cout << "//                                    ÈÃĞÀ ÎÊÎÍ×ÅÍÀ!                                    //\n";
+		cout << "//                                    GAME OVER!                                        //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
@@ -126,7 +126,7 @@ void graphics(int game_state, char* enemy_health, char* player_health, int enemy
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
-		cout << "//              1 - ĞÅÂÀÍØ                             2 - ÂÛÕÎÄ                        //\n";
+		cout << "//              1 - RESTART                             2 - QUIT                        //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//                                                                                      //\n";
 		cout << "//////////////////////////////////////////////////////////////////////////////////////////\n";
@@ -214,7 +214,7 @@ char* healthbar(int hp)
 	}
 }
 
-int* damage(int player_attack, int enemy_attack, int crit) // 1 - íîãîé = 3 óğîíà. 2 - ëåâîé = 1 óğîíà. 3 - ïğàâîé = 2 óğîíà. 4 - áëîê.
+int* damage(int player_attack, int enemy_attack, int crit)
 {
 	int dmg[2] = {0, 0};
 
@@ -287,8 +287,8 @@ int* damage(int player_attack, int enemy_attack, int crit) // 1 - íîãîé = 3 óğîí
 char* crit_miss_message(int* dmg, int enemy_attack, int player_attack)
 {
 	char* message;
-	const char* message_1 = "Êğèòè÷åñêèé óäàğ!";
-	const char* message_2 = "Ïğîìàõ!";
+	const char* message_1 = "CRITICAL HIT!";
+	const char* message_2 = "MISSED!";
 	const char* message_3 = "";
 	if (dmg[1] == 1)
 	{
@@ -307,10 +307,10 @@ char* crit_miss_message(int* dmg, int enemy_attack, int player_attack)
 char* used_attack(int attack)
 {
 	char* att;
-	const char* att_1 = "óäàğ íîãîé";
-	const char* att_2 = "óäàğ ëåâîé ğóêîé";
-	const char* att_3 = "óäàğ ïğàâîé ğóêîé";
-	const char* att_4 = "áëîê";
+	const char* att_1 = "Kick";
+	const char* att_2 = "Left punch";
+	const char* att_3 = "Right punch";
+	const char* att_4 = "Block";
 	switch (attack)
 	{
 	case 1:

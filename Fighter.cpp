@@ -2,7 +2,6 @@
 #include <iostream>
 #include <iomanip>
 #include "Fight_Lib.h"
-#include <locale.h>
 #include <time.h>
 #include <Windows.h>
 
@@ -11,7 +10,6 @@ using namespace std;
 int main()
 {
 	int gamestate = 0, player_hp, enemy_hp, player_attack = 4, enemy_attack = 4, player_crit, enemy_crit, player_dmg[2] = {0, 0}, enemy_dmg[2] = {0, 0}, cheat_hp = 0, cheat_crit = 0;
-	setlocale(LC_ALL, "Russian");
 
 	srand(time(NULL));
 	
@@ -37,7 +35,7 @@ int main()
 			cin >> player_attack;
 			enemy_attack = rand() % (4) + 1;
 			srand(time(NULL));
-			player_crit = rand() % (12 + 1 - 2) + 2;	// 2-5 - промах, 5-8 урон рукам, 9-11 - любой урон, 12 - крит.
+			player_crit = rand() % (12 + 1 - 2) + 2;
 			if (player_attack == 6)
 			{
 				cheat_crit = 1;
@@ -52,7 +50,7 @@ int main()
 				cout << "//                                                                                      //\n";
 				cout << "//                                                                                      //\n";
 				cout << "//                                                                                      //\n";
-				cout << "//                         ЧИТ АКТИВИРОВАН - \"ВСЕГДА КРИТ\"                              //\n";
+				cout << "//                         CHEAT ACTIVATED - \"ALWAYS CRIT\"                              //\n";
 				cout << "//                                                                                      //\n";
 				cout << "//                                                                                      //\n";
 				cout << "//                                                                                      //\n";
@@ -93,7 +91,7 @@ int main()
 				cout << "//                                                                                      //\n";
 				cout << "//                                                                                      //\n";
 				cout << "//                                                                                      //\n";
-				cout << "//                         ЧИТ АКТИВИРОВАН - \"БЕССМЕРТИЕ\"                               //\n";
+				cout << "//                         CHEAT ACTIVATED - \"INVINCIBILITY\"                            //\n";
 				cout << "//                                                                                      //\n";
 				cout << "//                                                                                      //\n";
 				cout << "//                                                                                      //\n";
